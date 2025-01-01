@@ -1,11 +1,17 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Home, CreateRoom, JoinRoom } from "./pages";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <h1 class="p-3">Hello World!</h1>;
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/create-room" element={<CreateRoom />} />
+        <Route path="/join-room" element={<JoinRoom />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
